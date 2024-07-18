@@ -19,7 +19,5 @@
             "name": "wjn"
         }
     ],
-    "minimum-stability": "dev",
-    "require-dev": {
-    }
+    "minimum-stability": "stable"
 }

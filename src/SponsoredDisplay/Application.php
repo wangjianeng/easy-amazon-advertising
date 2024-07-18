@@ -3,6 +3,7 @@
 namespace easyAmazonAdv\SponsoredDisplay;
 
 use easyAmazonAdv\Kernel\Provider\ClientServiceProvider;
+use easyAmazonAdv\Kernel\Provider\LoggerServiceProvider;
 use easyAmazonAdv\Kernel\Support\Collection;
 use Pimple\Container;
 
@@ -19,10 +20,14 @@ class Application extends Container
      */
     protected $providers = [
         ClientServiceProvider::class,
+        LoggerServiceProvider::class,
         Campaigns\ServiceProvider::class,
         Groups\ServiceProvider::class,
         ProductAds\ServiceProvider::class,
         Report\ServiceProvider::class,
+        Targeting\ServiceProvider::class,
+        NegativeTargeting\ServiceProvider::class,
+        Bid\ServiceProvider::class,
     ];
 
     /**

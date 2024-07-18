@@ -42,6 +42,7 @@ class Client extends BaseClient
         return $this->httpGet("/sp/keywords/{$keywordId}/bidRecommendations");
     }
 
+
     /**
      * createKeywordBidRecommendations.
      *
@@ -52,10 +53,11 @@ class Client extends BaseClient
      * @author  baihe <b_aihe@163.com>
      * @date    2019-11-14 20:02
      */
-    public function createKeywordBidRecommendations(array $params)
+    public function getKeywordsBidRecommendations(array $params)
     {
-        return $this->httpPost('/sp/ksponsoredeywords/bidRecommendations', $params);
+        return $this->httpPost('/sp/keywords/bidRecommendations', $params);
     }
+
 
     /**
      * getBidRecommendations.
@@ -69,6 +71,6 @@ class Client extends BaseClient
      */
     public function getBidRecommendations(array $params)
     {
-        return $this->httpPost(' /sp/targets/bidRecommendations', $params);
+        return $this->httpPost('/sp/targets/bidRecommendations', $params);
     }
 }

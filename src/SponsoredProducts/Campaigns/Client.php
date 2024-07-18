@@ -24,7 +24,7 @@ class Client extends BaseClient
      */
     public function getCampaign(int $campaignId)
     {
-        return $this->httpGet('/sp/campaigns/'.$campaignId);
+        return $this->httpGet('/sp/campaigns/extended'.$campaignId);
     }
 
     /**

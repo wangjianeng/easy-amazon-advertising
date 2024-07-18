@@ -24,7 +24,7 @@ class Client extends BaseClient
      */
     public function getAdGroup(int $adGroupId)
     {
-        return $this->httpGet('/sd/adGroups/'.$adGroupId, [], false);
+        return $this->httpGet('/sd/adGroups/extended/'.$adGroupId, [], false);
     }
 
     /**
@@ -57,6 +57,21 @@ class Client extends BaseClient
         return $this->httpPost('/sd/adGroups', $params, [], false);
     }
 
+
+    public function listCreatives(array $params = [])
+    {
+		return $this->httpGet('/sd/creatives/', $params, false);
+	}
+	
+	public function createCreatives(array $params)
+    {
+        return $this->httpPost('/sd​/creatives', $params, [], false);
+    }
+	
+	public function updateCreatives(array $params)
+    {
+        return $this->httpPut('/sd/creatives', $params, [], false);
+    }
     /**
      * updateAdGroups.
      *
@@ -72,6 +87,11 @@ class Client extends BaseClient
         return $this->httpPut('/sd/adGroups', $params, [], false);
     }
 
+
+	public function updateAdGroup(array $params)
+    {
+        return $this->httpPut('/sd/adGroups', $params, [], false);
+    }
     /**
      * archiveAdGroup.
      *

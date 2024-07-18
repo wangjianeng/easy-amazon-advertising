@@ -39,9 +39,35 @@ class Client extends BaseClient
      */
     public function listTargetingClauses(array $params = [])
     {
-        return $this->httpGet('/sp/targets', $params);
+        return $this->httpGet('/sp/targets/extended/', $params);
     }
 
+    public function listCampaignNegativeTargets(array $params = [])
+    {
+        return $this->httpGet('/sp/campaignNegativeTargets', $params);
+    }
+    public function updateCampaignNegativeTargets(array $params)
+    {
+        return $this->httpPut('/sp/campaignNegativeTargets', $params);
+    }
+    public function createCampaignNegativeTargets(array $params)
+    {
+        return $this->httpPost('/sp/campaignNegativeTargets', $params);
+    }
+
+
+    public function listNegativeTargets(array $params = [])
+    {
+        return $this->httpGet('/sp/negativeTargets', $params);
+    }
+    public function updateNegativeTargets(array $params)
+    {
+        return $this->httpPut('/sp/negativeTargets', $params);
+    }
+    public function createNegativeTargets(array $params)
+    {
+        return $this->httpPost('/sp/negativeTargets', $params);
+    }
     /**
      * getTargetingClauseEx.
      *
@@ -111,8 +137,6 @@ class Client extends BaseClient
      *
      * @return mixed
      *
-     * @throws \easyAmazonAdv\Kernel\Exceptions\HttpException
-     *
      * @author  baihe <b_aihe@163.com>
      * @date    2019-11-12 15:08
      */
@@ -127,8 +151,6 @@ class Client extends BaseClient
      * @param array $asins
      *
      * @return mixed
-     *
-     * @throws \easyAmazonAdv\Kernel\Exceptions\HttpException
      *
      * @example [{"id":2335752011,"name":"Cell Phones & Accessories","path":"/Cell Phones & Accessories","isTargetable":true},{"id":2407774011,"name":"Cell Phone Cables","path":"/Cell Phones & Accessories/Cell Phone Accessories/Cell Phone Cables","isTargetable":true},{"id":2407755011,"name":"Cell Phone Accessories","path":"/Cell Phones & Accessories/Cell Phone Accessories","isTargetable":true}]
      *
@@ -147,8 +169,6 @@ class Client extends BaseClient
      *
      * @return mixed
      *
-     * @throws \easyAmazonAdv\Kernel\Exceptions\HttpException
-     *
      * @example {"categoryId":2407755011,"brands":[{"id":20710054011,"name":"APPLE"},{"id":2528944011,"name":"Apple"},{"id":7637061011,"name":"amFilm"},{"id":19838852011,"name":"INIU"},{"id":2528919011,"name":"AmazonBasics"},{"id":20051359011,"name":"Spigen"},{"id":8886508011,"name":"Mpow"}],"ageRanges":[]}
      *
      * @author  baihe <b_aihe@163.com>
@@ -160,17 +180,15 @@ class Client extends BaseClient
     }
 
     /**
-     * getBrandRecommendations 根据关键字或者分类id查询对应的推荐品牌.
+     * getBrandRecommendations.
      *
-     * @param string $type    keyword categoryId
+     * @param string $type
      * @param string $content
      *
-     * @return mixed
-     *
-     * @throws \easyAmazonAdv\Kernel\Exceptions\HttpException
+     * @return array
      *
      * @author  baihe <b_aihe@163.com>
-     * @date    2019-11-12 11:59
+     * @date    2020-02-10 14:39
      */
     public function getBrandRecommendations(string $type, string $content)
     {

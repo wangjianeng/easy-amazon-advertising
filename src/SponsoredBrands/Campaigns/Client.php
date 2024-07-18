@@ -27,6 +27,17 @@ class Client extends BaseClient
         return $this->httpGet('/sb/campaigns', $params, false);
     }
 
+    public function listCampaignsEx(array $params = [])
+    {
+        return $this->httpGet('/sb/campaigns', $params, false);
+		//return $this->httpPost('/sb/v4/campaigns/list', $params, [], false, 'text/plain');
+    }
+	
+	public function listCampaignsV4Ex(array $params = [])
+    {
+		return $this->httpPostSBV4('/sb/v4/campaigns/list', $params, [], false, 'text/plain');
+    }
+
     /**
      * createCampaigns.
      *
@@ -68,6 +79,11 @@ class Client extends BaseClient
      * @date    2019-11-14 00:43
      */
     public function getCampaign(int $campaignId)
+    {
+        return $this->httpGet('/sb/campaigns/'.$campaignId, [], false);
+    }
+
+    public function getCampaignEx(int $campaignId)
     {
         return $this->httpGet('/sb/campaigns/'.$campaignId, [], false);
     }

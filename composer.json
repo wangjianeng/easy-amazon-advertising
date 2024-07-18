@@ -1,6 +1,14 @@
 {
     "name": "wjn/easy-amazon-advertising",
     "type": "library",
+    "license": "MIT",
+    "require": {
+        "php": ">=7.2.0",
+        "guzzlehttp/guzzle": "6.*",
+        "pimple/pimple": "~3.0",
+        "monolog/monolog": "^1.22 || ^2.0",
+        "ext-zlib": "*"
+    },
     "autoload": {
         "psr-4": {
             "easyAmazonAdv\\": "src/"
@@ -11,5 +19,7 @@
             "name": "wjn"
         }
     ],
-    "require": {}
+    "minimum-stability": "dev",
+    "require-dev": {
+    }
 }

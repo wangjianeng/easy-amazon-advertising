@@ -1,39 +1,15 @@
 {
-  "name": "wangjianeng/amazon-advertising",
-  "description": "Amazon Advertising API v2 Client Library",
-  "type": "library",
-  "license": "MIT",
-  "require": {
-    "php": ">=7.2.0",
-    "guzzlehttp/guzzle": "6.4.*",
-    "pimple/pimple": "~3.0"
-  },
-  "repository": {
-      "type": "vcs",
-      "url": "https://github.com/wangjianeng/easy-amazon-advertising.git"
-  },
-  "keywords": [
-    "amazon",
-    "Advertising",
-    "Advertising v2",
-    "sdk",
-    "library",
-    "easyAmazonAdv",
-    "v2"
-  ],
-  "autoload": {
-    "psr-4": {
-      "easyAmazonAdv\\": "src/"
-    }
-  },
-  "authors": [
-    {
-      "name": "jn",
-      "email": "jn@163.com"
-    }
-  ],
-  "minimum-stability": "dev",
-  "require-dev": {
-    "phpunit/phpunit": "^8.5@dev"
-  }
+    "name": "wjn/easy-amazon-advertising",
+    "type": "library",
+    "autoload": {
+        "psr-4": {
+            "easyAmazonAdv\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "wjn"
+        }
+    ],
+    "require": {}
 }

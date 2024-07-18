@@ -8,6 +8,10 @@
     "guzzlehttp/guzzle": "6.4.*",
     "pimple/pimple": "~3.0"
   },
+  "repository": {
+      "type": "vcs",
+      "url": "https://github.com/wangjianeng/easy-amazon-advertising.git"
+  },
   "keywords": [
     "amazon",
     "Advertising",
